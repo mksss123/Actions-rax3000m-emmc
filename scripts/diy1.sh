@@ -9,4 +9,5 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-
+git clone https://github.com/liudf0716/luci-app-apfree-wifidog
+mv luci-app-apfree-wifidog feeds/luci/applications/luci-app-apfree-wifidog/
