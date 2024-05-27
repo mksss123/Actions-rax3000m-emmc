@@ -76,7 +76,7 @@ jobs:
     - name: 开启缓存
       uses: klever1988/cachewrtbuild@main
       with:
-        ccache: 'true'
+        ccache: 'false'
         mixkey: 'openwrt23-cortexa53'
         prefix: ${{ github.workspace }}/openwrt
 
