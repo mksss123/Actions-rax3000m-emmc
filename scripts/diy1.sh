@@ -9,3 +9,7 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
+echo "gitclone apfree-wifigod-luci"
+git clone https://github.com/liudf0716/luci-app-apfree-wifidog feeds/luci/applications/luci-app-apfree-wifidog/
+ls
+echo "mv to package "
