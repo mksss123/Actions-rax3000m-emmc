@@ -35,6 +35,7 @@ env:
   DIY1_SH: scripts/diy1.sh
   DIY2_SH: scripts/diy2.sh
   CLASH_CORE: scripts/preset-clash-core.sh
+  FEEDS_CONF: feeds.conf.default
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
@@ -82,8 +83,9 @@ jobs:
 
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
+        chmod +x $GITHUB_WORKSPACE/$DIY1_SH && $GITHUB_WORKSPACE/$DIY1_SH
         cd openwrt
-         chmod +x $GITHUB_WORKSPACE/$DIY1_SH && $GITHUB_WORKSPACE/$DIY1_SH
         ./scripts/feeds update -a && ./scripts/feeds install -a        
         chmod +x $GITHUB_WORKSPACE/$DIY2_SH && $GITHUB_WORKSPACE/$DIY2_SH
 
