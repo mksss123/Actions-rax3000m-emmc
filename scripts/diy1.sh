@@ -10,4 +10,3 @@
 # See /LICENSE for more information.
 #
 
-echo 'src-git luci-app-apfree-wifidog https://github.com/liudf0716/luci-app-apfree-wifidog' >>feeds.conf.default
