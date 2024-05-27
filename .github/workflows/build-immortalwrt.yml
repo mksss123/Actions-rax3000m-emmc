@@ -83,8 +83,9 @@ jobs:
     - name: 更新 & 安装 feeds & 执行脚本
       run: |
         cd openwrt
+        ./scripts/feeds update -a
         chmod +x $GITHUB_WORKSPACE/$DIY1_SH && $GITHUB_WORKSPACE/$DIY1_SH
-        ./scripts/feeds update -a && ./scripts/feeds install -a        
+        ./scripts/feeds install -a
         chmod +x $GITHUB_WORKSPACE/$DIY2_SH && $GITHUB_WORKSPACE/$DIY2_SH
 
     - name: 导入补丁和配置
