@@ -46,7 +46,12 @@ jobs:
 
     steps:
     - name: 检查
-       run: |
+      uses: actions/checkout@main
+
+    - name: 初始化环境
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
         uname -m
         lsb_release -a
         uname -r
